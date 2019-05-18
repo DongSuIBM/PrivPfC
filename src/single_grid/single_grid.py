@@ -41,8 +41,6 @@ Only used by the exponential mechanism.
 """
 def grid_quality_binary(I_tab, grid, epsilon_2):
 
-    print "grid_quality_binary"
-
     quality_bi_cls_total = 0.0
 
     cell_size_list = []
