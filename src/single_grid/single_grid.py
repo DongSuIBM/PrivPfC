@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import json, copy
 import multiprocessing
+import time
 
 import tools
 
@@ -66,8 +67,6 @@ def grid_quality_binary(I_tab, grid, epsilon_2):
 
 
 def grid_quality_multi(I_tab, grid, epsilon_2):
-
-    print "grid_quality_multi"
 
     quality_multi_cls_total = 0.0
     cell_size_list = []
@@ -158,7 +157,7 @@ def reload_grid_list():
 
 def dump_selected_grid(grid):
     grid_fn = config.config.root_dir + "_".join(["eps=" + str(config.config.exp_info["epsilon"]),
-                                                "fold" + str(config.config.exp_info["fold_num"]), "selected_grid.json"])
+                                                "fold=" + str(config.config.exp_info["fold_num"]), "selected_grid.json"])
 
     with open(grid_fn, "w") as f:
         json.dump(grid, f)
@@ -343,6 +342,8 @@ def parallel_compute_quality_score_list(epsilon_2, step):
 
     pool.close()
     pool.join()
+    #sleep 5s to wait for io
+    time.sleep(5) 
 
     return
 
