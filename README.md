@@ -9,10 +9,10 @@ Dong Su, Jianneng Cao, Ninghui Li, Min Lyu: [PrivPfC: differentially private dat
 - `cd ./src/single_grid`
 - To publish the adult data for binary classification on the income attribute, 
   - `cd ./src/experiment_basic.py`
-  - `python experiments_basic.py --dataset=adult --epsilon=1.0 --fold_num=0 --pool_size_threshold=10000`
+  - `python experiments_basic.py --dataset_name=adult --epsilon=1.0 --fold_num=0 --pool_size_threshold=10000`
 - To publish the adult data for 3-class classification on the marital-status attribute, 
   - `cd ./src/experiment_basic.py`
-  - `python experiments_basic.py --dataset=adult_marital-status --epsilon=1.0 --fold_num=0 --pool_size_threshold=10000`
+  - `python experiments_basic.py --dataset_name=adult_marital-status --epsilon=1.0 --fold_num=0 --pool_size_threshold=10000`
 
 ## Environment requirements
 - Python 2.7.12
